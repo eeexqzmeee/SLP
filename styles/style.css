@@ -41,8 +41,8 @@ body {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.25) 0%, transparent 60%);
-    filter: blur(40px);
+        radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.25) 0%, transparent 100%);
+    filter: blur(160px);
     z-index: -1;
 }
 
@@ -399,4 +399,5 @@ body {
 .icon-help:before { content: "❓"; }
 .icon-server:before { content: "🌐"; }
 .icon-globe:before { content: "🗺️"; }
+
 .icon-speed:before { content: "🚀"; }
