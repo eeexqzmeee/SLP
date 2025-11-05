@@ -10,13 +10,7 @@
     <div class="background-glow"></div>
     
     <div class="app">
-        <!-- Header -->
-        <div class="app-header">
-            <div class="app-title">SILENCE</div>
-            <div class="app-subtitle">SECURE PROXY</div>
-        </div>
-
-        <!-- User Status -->
+        <!-- User Status Card -->
         <div class="user-status-card">
             <div class="user-info">
                 <div class="user-avatar">
@@ -47,65 +41,62 @@
             </div>
         </div>
 
-        <!-- Main Actions -->
-        <div class="main-actions">
-            <div class="subscription-card">
-                <div class="subscription-header">
-                    <div class="subscription-title">Подписка</div>
-                    <div class="subscription-badge">Active</div>
-                </div>
-                <div class="subscription-details">
-                    <div class="subscription-detail">
-                        <div class="detail-label">Следующее списание</div>
-                        <div class="detail-value">15 ноября 2025</div>
-                    </div>
-                    <div class="subscription-detail">
-                        <div class="detail-label">Тариф</div>
-                        <div class="detail-value">Premium • 2 устройства</div>
-                    </div>
-                    <div class="subscription-detail">
-                        <div class="detail-label">Трафик в цикле</div>
-                        <div class="detail-value">227.78 из 500 Гб</div>
-                    </div>
-                </div>
+        <!-- Full Width Subscription Card -->
+        <div class="subscription-card-full">
+            <div class="subscription-header">
+                <div class="subscription-title">Моя подписка</div>
+                <div class="subscription-badge">Active</div>
             </div>
-            
-            <div class="quick-actions">
-                <div class="quick-action" onclick="openModal('renew')">
-                    <div class="action-icon icon-renew"></div>
-                    <div class="action-title">Продлить</div>
-                    <div class="action-subtitle">от 240 ₽</div>
+            <div class="subscription-details">
+                <div class="subscription-detail">
+                    <div class="detail-value">15.11.2025</div>
+                    <div class="detail-label">Истекает</div>
                 </div>
-                <div class="quick-action" onclick="openModal('setup')">
-                    <div class="action-icon icon-settings"></div>
-                    <div class="action-title">Настройка</div>
-                    <div class="action-subtitle">VPN</div>
+                <div class="subscription-detail">
+                    <div class="detail-value">2/2</div>
+                    <div class="detail-label">Устройства</div>
+                </div>
+                <div class="subscription-detail">
+                    <div class="detail-value">227 Гб</div>
+                    <div class="detail-label">Трафик</div>
                 </div>
             </div>
         </div>
 
-        <!-- Features -->
-        <div class="features-section">
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon icon-server"></div>
-                    <div class="feature-value">587</div>
-                    <div class="feature-label">Серверов</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon icon-globe"></div>
-                    <div class="feature-value">64</div>
-                    <div class="feature-label">Локаций</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon icon-speed"></div>
-                    <div class="feature-value">10 Гб/с</div>
-                    <div class="feature-label">Скорость</div>
-                </div>
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <div class="action-button" onclick="openModal('renew')">
+                <div class="action-button-icon icon-renew"></div>
+                <div class="action-button-title">Продлить</div>
+                <div class="action-button-subtitle">от 240 ₽</div>
+            </div>
+            <div class="action-button" onclick="openModal('setup')">
+                <div class="action-button-icon icon-settings"></div>
+                <div class="action-button-title">Настройка</div>
+                <div class="action-button-subtitle">VPN</div>
             </div>
         </div>
 
-        <!-- Navigation -->
+        <!-- Features Grid -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon icon-server"></div>
+                <div class="feature-value">587</div>
+                <div class="feature-label">Серверов</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon icon-globe"></div>
+                <div class="feature-value">64</div>
+                <div class="feature-label">Локаций</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon icon-speed"></div>
+                <div class="feature-value">10 Гб/с</div>
+                <div class="feature-label">Скорость</div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
         <div class="navigation-menu">
             <div class="nav-section">
                 <div class="nav-title">Управление</div>
