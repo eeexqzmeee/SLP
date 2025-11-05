@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Silence Proxy</title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- Connection Header -->
+        <div class="connection-header">
+            <div class="connection-status">
+                <div class="status-indicator"></div>
+                <div class="status-text">Silence Proxy</div>
+            </div>
+        </div>
+
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- User Profile -->
+            <div class="user-card floating">
+                <div class="user-avatar">🔒</div>
+                <div class="username">silence</div>
+                <div class="user-plan">Premium Подписка</div>
+            </div>
+
+            <!-- Subscription Card - полная ширина -->
+            <div class="subscription-card-full">
+                <div class="subscription-header">
+                    <div class="subscription-title">Моя подписка</div>
+                    <div class="subscription-status">Активна</div>
+                </div>
+                <div class="subscription-details">
+                    <div class="subscription-detail">
+                        <div class="detail-value">15.11.2025</div>
+                        <div class="detail-label">Истекает</div>
+                    </div>
+                    <div class="subscription-detail">
+                        <div class="detail-value">2/2</div>
+                        <div class="detail-label">Устройства</div>
+                    </div>
+                    <div class="subscription-detail">
+                        <div class="detail-value">227 Гб</div>
+                        <div class="detail-label">Трафик</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons - две кнопки рядом -->
+            <div class="action-buttons">
+                <div class="action-button" onclick="openModal('renew')">
+                    <div class="action-button-icon">🔄</div>
+                    <div class="action-button-title">Продлить</div>
+                    <div class="action-button-subtitle">от 240 ₽</div>
+                </div>
+                <div class="action-button" onclick="openModal('setup')">
+                    <div class="action-button-icon">⚙️</div>
+                    <div class="action-button-title">Настройка</div>
+                    <div class="action-button-subtitle">VPN</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <div class="feature-value">500+</div>
+                <div class="feature-label">Серверов</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌍</div>
+                <div class="feature-value">50+</div>
+                <div class="feature-label">Стран</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <div class="feature-value">10 Гб/с</div>
+                <div class="feature-label">Скорость</div>
+            </div>
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="nav-menu">
+            <div class="menu-section">
+                <div class="menu-title">Управление</div>
+                <div class="menu-items">
+                    <div class="menu-item" onclick="openModal('devices')">
+                        <div class="menu-icon">📱</div>
+                        <div class="menu-text">Мои устройства</div>
+                        <div class="menu-badge">2</div>
+                    </div>
+                    <div class="menu-item" onclick="openModal('support')">
+                        <div class="menu-icon">💬</div>
+                        <div class="menu-text">Поддержка</div>
+                    </div>
+                </div>
+            </div>
+            <div class="menu-section">
+                <div class="menu-title">Дополнительно</div>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-icon">📖</div>
+                        <div class="menu-text">Инструкции</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-icon">👥</div>
+                        <div class="menu-text">Рефералы</div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-icon">⚡</div>
+                        <div class="menu-text">Быстрая помощь</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Модальные окна -->
+        <div id="renewModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Продление подписки</h2>
+                    <button class="modal-close" onclick="closeModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-description">Выберите тарифный план</p>
+                    
+                    <div class="tariff-options">
+                        <div class="tariff-card" onclick="selectTariff(this)">
+                            <div class="tariff-header">
+                                <h4>1 месяц</h4>
+                                <div class="tariff-price">240 ₽</div>
+                            </div>
+                            <p class="tariff-period">240 ₽/месяц</p>
+                        </div>
+
+                        <div class="tariff-card popular" onclick="selectTariff(this)">
+                            <div class="popular-badge">Выгодно</div>
+                            <div class="tariff-header">
+                                <h4>6 месяцев</h4>
+                                <div class="tariff-price">1150 ₽</div>
+                            </div>
+                            <p class="tariff-period">191 ₽/месяц</p>
+                        </div>
+
+                        <div class="tariff-card" onclick="selectTariff(this)">
+                            <div class="tariff-header">
+                                <h4>1 год</h4>
+                                <div class="tariff-price">2110 ₽</div>
+                            </div>
+                            <p class="tariff-period">175 ₽/месяц</p>
+                        </div>
+                    </div>
+
+                    <button class="pay-button" onclick="processPayment()">
+                        Оплатить 1150 ₽
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="setupModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Настройка VPN</h2>
+                    <button class="modal-close" onclick="closeModal()">×</button>
+                </div>
+                <div class="modal-body">
+                    <div class="setup-steps">
+                        <div class="setup-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Скачайте конфигурацию</h4>
+                                <p>Файл настроек для вашего устройства</p>
+                            </div>
+                        </div>
+                        <div class="setup-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Установите приложение</h4>
+                                <p>WireGuard или OpenVPN</p>
+                            </div>
+                        </div>
+                        <div class="setup-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Импортируйте конфиг</h4>
+                                <p>Загрузите файл в приложение</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="setup-actions">
+                        <button class="setup-button primary" onclick="downloadConfig()">
+                            📥 Скачать конфигурацию
+                        </button>
+                        <button class="setup-button secondary" onclick="showInstructions()">
+                            📖 Инструкция по установке
+                        </button>
+                    </div>
+
+                    <div class="manual-config">
+                        <p>Или используйте ссылку для ручной настройки:</p>
+                        <div class="config-link">https://silence.proxy/config/abc123</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/app.js"></script>
+</body>
+</html>

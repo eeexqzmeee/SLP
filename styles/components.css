@@ -1,0 +1,435 @@
+@import 'variables.css';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--background);
+    color: var(--text-primary);
+    line-height: 1.4;
+    overflow-x: hidden;
+    font-size: 17px;
+}
+
+.app {
+    min-height: 100vh;
+    background: var(--background);
+}
+
+/* App Header */
+.app-header {
+    padding: var(--space-xl) var(--space-lg) var(--space-lg);
+    text-align: center;
+    border-bottom: 0.5px solid var(--border);
+}
+
+.app-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+    background: linear-gradient(135deg, var(--text-primary), var(--accent-light));
+    -webkit-text-fill-color: transparent;
+}
+
+.app-badge {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Main Content */
+.main-content {
+    padding: 0;
+}
+
+/* User Section */
+.user-section {
+    padding: var(--space-xl) var(--space-lg);
+}
+
+.user-card {
+    text-align: center;
+    margin-bottom: var(--space-lg);
+}
+
+.username {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: var(--text-primary);
+}
+
+.user-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    color: var(--text-secondary);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--success);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.subscription-details {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+}
+
+.subscription-item {
+    color: var(--text-primary);
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Divider */
+.divider {
+    height: 0.5px;
+    background: var(--border);
+    margin: 0 var(--space-lg);
+}
+
+/* Actions Section */
+.actions-section {
+    padding: var(--space-lg) 0;
+}
+
+.action-item {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: var(--space-lg) var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.action-item:active {
+    background: var(--surface-light);
+}
+
+.action-content {
+    flex: 1;
+    text-align: left;
+}
+
+.action-title {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+}
+
+.action-subtitle {
+    font-size: 15px;
+    color: var(--accent);
+    font-weight: 400;
+}
+
+/* Profile Section */
+.profile-section {
+    padding: var(--space-lg) 0;
+}
+
+.profile-title {
+    padding: var(--space-md) var(--space-lg) var(--space-sm);
+    font-size: 15px;
+    color: var(--text-muted);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.profile-item {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: var(--space-lg) var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.profile-item:active {
+    background: var(--surface-light);
+}
+
+.profile-text {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    display: none;
+    align-items: flex-end;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: var(--surface);
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1001;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-lg);
+    border-bottom: 0.5px solid var(--border);
+    position: sticky;
+    top: 0;
+    background: var(--surface);
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 20px;
+    cursor: pointer;
+    padding: var(--space-sm);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body {
+    padding: var(--space-lg);
+}
+
+.modal-description {
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* Tariff Options */
+.tariff-options {
+    margin-bottom: var(--space-xl);
+}
+
+.tariff-row {
+    padding: var(--space-lg);
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--space-md);
+    position: relative;
+    transition: var(--transition);
+}
+
+.tariff-row:active {
+    background: var(--surface-light);
+}
+
+.tariff-row.popular {
+    border-color: var(--accent);
+}
+
+.tariff-badge {
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: var(--text-primary);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.tariff-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-xs);
+}
+
+.tariff-name {
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.tariff-price {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.tariff-save {
+    font-size: 15px;
+    color: var(--accent);
+    text-align: left;
+}
+
+/* Buttons */
+.pay-button {
+    width: 100%;
+    background: var(--accent);
+    color: var(--text-primary);
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pay-button:active {
+    background: var(--accent-dark);
+    transform: scale(0.98);
+}
+
+.setup-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+}
+
+.setup-button {
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+    padding: var(--space-lg);
+    font-size: 17px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.setup-button.primary {
+    background: var(--accent);
+    color: var(--text-primary);
+}
+
+.setup-button.primary:active {
+    background: var(--accent-dark);
+}
+
+.setup-button.secondary {
+    background: var(--surface-light);
+    color: var(--text-primary);
+    border: 0.5px solid var(--border);
+}
+
+.setup-button.secondary:active {
+    background: var(--surface);
+}
+
+.manual-config {
+    text-align: center;
+}
+
+.config-label {
+    color: var(--text-secondary);
+    margin-bottom: var(--space-md);
+    font-size: 15px;
+}
+
+.config-link {
+    background: var(--surface-light);
+    padding: var(--space-md);
+    border-radius: var(--border-radius-sm);
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    word-break: break-all;
+    color: var(--text-primary);
+    border: 0.5px solid var(--border);
+}
+
+/* Support Options */
+.support-options {
+    display: flex;
+    flex-direction: column;
+}
+
+.support-item {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: var(--transition);
+    border-bottom: 0.5px solid var(--border);
+}
+
+.support-item:last-child {
+    border-bottom: none;
+}
+
+.support-item:active {
+    background: var(--surface-light);
+}
+
+.support-text {
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text-primary);
+}
+
+.support-arrow {
+    color: var(--text-muted);
+    font-size: 20px;
+    font-weight: 300;
+}
