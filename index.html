@@ -10,11 +10,6 @@
     <div class="background-glow"></div>
     
     <div class="app">
-        <!-- Header -->
-        <div class="app-header">
-            <div class="app-title">Silence Proxy</div>
-        </div>
-
         <!-- Compact User Info -->
         <div class="user-info-compact">
             <div class="user-avatar-small">
@@ -74,25 +69,27 @@
             </div>
         </div>
 
-        <!-- Secondary Actions -->
-        <div class="main-actions-grid">
+        <!-- Triple Actions Row -->
+        <div class="triple-actions-grid">
             <!-- Devices Action -->
-            <div class="primary-action" onclick="openModal('devices')">
-                <div class="primary-action-icon icon-devices"></div>
-                <div class="primary-action-title">Мои устройства</div>
-                <div class="primary-action-subtitle">Управление подключениями</div>
+            <div class="triple-action" onclick="openModal('devices')">
+                <div class="triple-action-icon icon-devices"></div>
+                <div class="triple-action-title">Устройства</div>
+                <div class="triple-action-subtitle">2 активных</div>
             </div>
 
             <!-- Support Action -->
-            <div class="secondary-actions">
-                <div class="secondary-action" onclick="openModal('support')">
-                    <div class="secondary-action-icon icon-support"></div>
-                    <div class="secondary-action-title">Поддержка</div>
-                </div>
-                <div class="secondary-action">
-                    <div class="secondary-action-icon icon-guide"></div>
-                    <div class="secondary-action-title">Инструкции</div>
-                </div>
+            <div class="triple-action" onclick="openModal('support')">
+                <div class="triple-action-icon icon-support"></div>
+                <div class="triple-action-title">Поддержка</div>
+                <div class="triple-action-subtitle">Помощь 24/7</div>
+            </div>
+
+            <!-- Guide Action -->
+            <div class="triple-action" onclick="showInstructions()">
+                <div class="triple-action-icon icon-guide"></div>
+                <div class="triple-action-title">Инструкции</div>
+                <div class="triple-action-subtitle">Установка</div>
             </div>
         </div>
 
