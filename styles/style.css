@@ -691,7 +691,52 @@ body {
 .main-actions-grid {
     display: none;
 }
+.double-actions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
 
+.double-action {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 20px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.double-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.2);
+}
+
+.double-action-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.double-action-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.double-action-subtitle {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+/* Remove old actions grid styles */
+.triple-actions-grid,
+.main-actions-grid {
+    display: none;
+}
 
 /* Icons */
 .icon-shield:before { content: "🛡️"; }

@@ -61,9 +61,6 @@ AllowedIPs = 0.0.0.0/0`;
     alert('Конфигурационный файл скачан');
 }
 
-function showInstructions() {
-    alert('Открывается инструкция по установке...');
-}
 
 // Close modal when clicking on backdrop
 document.querySelectorAll('.modal').forEach(modal => {
