@@ -18,7 +18,7 @@ function closeModal() {
 // Tariff selection
 function selectTariff(tariffCard) {
     // Remove selection from all cards
-    document.querySelectorAll('.tariff-card').forEach(card => {
+    document.querySelectorAll('.tariff-row').forEach(card => {
         card.style.borderColor = '';
     });
     
@@ -60,7 +60,6 @@ AllowedIPs = 0.0.0.0/0`;
     
     alert('Конфигурационный файл скачан');
 }
-
 
 // Close modal when clicking on backdrop
 document.querySelectorAll('.modal').forEach(modal => {

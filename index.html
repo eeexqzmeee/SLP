@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>Silence Proxy</title>
-    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/components.css">
+    <link rel="stylesheet" href="./styles/modals.css">
 </head>
 <body>
     <div class="background-glow"></div>
@@ -47,12 +49,11 @@
         </div>
 
         <!-- Full Width Renew Action -->
-        <div class="full-width-action" onclick="openModal('renew')">
+        <div class="full-width-action renew-action" onclick="openModal('renew')">
             <div class="full-width-action-content">
                 <div class="full-width-action-icon icon-renew"></div>
                 <div class="full-width-action-text">
                     <div class="full-width-action-title">Продлить подписку</div>
-                    <div class="full-width-action-subtitle">Автопродление включено</div>
                 </div>
                 <div class="full-width-action-price">от 240 ₽</div>
             </div>
@@ -118,6 +119,124 @@
                         <div class="nav-icon icon-help"></div>
                         <div class="nav-text">Помощь</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Windows -->
+    <!-- Renew Modal -->
+    <div class="modal" id="renewModal">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Продление подписки</div>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">Выберите подходящий тариф</div>
+                <div class="tariff-options">
+                    <div class="tariff-row popular" onclick="selectTariff(this)">
+                        <div class="tariff-badge">Популярный</div>
+                        <div class="tariff-main">
+                            <div class="tariff-name">1 месяц</div>
+                            <div class="tariff-price">240 ₽</div>
+                        </div>
+                        <div class="tariff-save">Экономия 0%</div>
+                    </div>
+                    <div class="tariff-row" onclick="selectTariff(this)">
+                        <div class="tariff-main">
+                            <div class="tariff-name">3 месяца</div>
+                            <div class="tariff-price">600 ₽</div>
+                        </div>
+                        <div class="tariff-save">Экономия 17%</div>
+                    </div>
+                    <div class="tariff-row" onclick="selectTariff(this)">
+                        <div class="tariff-main">
+                            <div class="tariff-name">12 месяцев</div>
+                            <div class="tariff-price">1920 ₽</div>
+                        </div>
+                        <div class="tariff-save">Экономия 33%</div>
+                    </div>
+                </div>
+                <button class="pay-button" onclick="processPayment()">Оплатить 240 ₽</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Setup Modal -->
+    <div class="modal" id="setupModal">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Настройка VPN</div>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">Выберите способ настройки</div>
+                <div class="setup-actions">
+                    <button class="setup-button primary" onclick="downloadConfig()">Скачать конфигурацию</button>
+                    <button class="setup-button secondary">Ручная настройка</button>
+                </div>
+                <div class="manual-config">
+                    <div class="config-label">Или используйте конфигурацию вручную:</div>
+                    <div class="config-link">proxy.silence-vpn.com:51820</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Support Modal -->
+    <div class="modal" id="supportModal">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Поддержка</div>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">Выберите способ связи</div>
+                <div class="support-options">
+                    <button class="support-item">
+                        <div class="support-text">Telegram чат</div>
+                        <div class="support-arrow">›</div>
+                    </button>
+                    <button class="support-item">
+                        <div class="support-text">Email поддержка</div>
+                        <div class="support-arrow">›</div>
+                    </button>
+                    <button class="support-item">
+                        <div class="support-text">FAQ</div>
+                        <div class="support-arrow">›</div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Devices Modal -->
+    <div class="modal" id="devicesModal">
+        <div class="modal-backdrop" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Мои устройства</div>
+                <button class="modal-close" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">Управление подключенными устройствами</div>
+                <div class="support-options">
+                    <button class="support-item">
+                        <div class="support-text">iPhone 14 Pro (активно)</div>
+                        <div class="support-arrow">›</div>
+                    </button>
+                    <button class="support-item">
+                        <div class="support-text">MacBook Air (активно)</div>
+                        <div class="support-arrow">›</div>
+                    </button>
+                    <button class="support-item">
+                        <div class="support-text">Добавить устройство</div>
+                        <div class="support-arrow">+</div>
+                    </button>
                 </div>
             </div>
         </div>

@@ -1,33 +1,26 @@
 :root {
     /* Цветовая палитра */
-    --background: #000000;
-    --surface: #1C1C1E;
-    --surface-light: #2C2C2E;
-    --surface-dark: #121212;
-    
+    --primary: #8B5CF6;
+    --primary-glow: rgba(139, 92, 246, 0.6);
+    --primary-light: #A78BFA;
+    --background: #0A0A0A;
+    --surface: rgba(28, 28, 30, 0.95);
+    --surface-light: rgba(255, 255, 255, 0.08);
     --text-primary: #FFFFFF;
-    --text-secondary: #98989F;
-    --text-muted: #6D6D72;
-    
-    --accent: #8E6CFF;
-    --accent-light: #9D7EFF;
-    --accent-dark: #7D5AE6;
-    
-    --success: #30D158;
-    --warning: #FF9F0A;
-    --error: #FF453A;
-    
-    /* Границы */
-    --border: #38383A;
-    --border-light: #2C2C2E;
-    
-    /* Тени */
-    --shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    
+    --text-secondary: rgba(255, 255, 255, 0.8);
+    --text-muted: rgba(255, 255, 255, 0.6);
+    --success: #10B981;
+    --success-glow: rgba(16, 185, 129, 0.4);
+    --border: rgba(255, 255, 255, 0.12);
+    --border-light: rgba(255, 255, 255, 0.06);
+    --glass-blur: blur(40px);
+    --shadow-glow: 0 8px 40px rgba(139, 92, 246, 0.3);
+
     /* Размеры */
     --border-radius: 12px;
     --border-radius-sm: 8px;
     --border-radius-lg: 16px;
+    --border-radius-xl: 24px;
     
     /* Отступы */
     --space-xs: 4px;
@@ -37,5 +30,5 @@
     --space-xl: 24px;
     
     /* Анимации */
-    --transition: 0.2s ease;
+    --transition: 0.3s ease;
 }
